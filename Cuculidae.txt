@@ -1,0 +1,28 @@
+========================================================================
+PROJECT SNAPSHOT: CUCULIDAE (ESP32-8048S070 Portrait UI Control Node)
+========================================================================
+
+Orientation: Native Portrait Mode (Width: 480px, Height: 800px)
+
+screen 0 = Setup (Manual, Bluetooth)
+screen 1 = Year-Selection
+screen 2 = Month-Selection
+screen 3 = Day-Selection
+screen 4 = TZ & DST -Selection
+screen 5 = Hour-Selection
+screen 6 = Minute-Selection
+screen 7 = User-Agreement
+screen 8 = Bluetooth-QR-Code
+screen 9 = Dashboard
+
+Dashboard Line 1 (Control Bar): Y: 20 -> Y: 70  | 5 Buttons (96px pitch | X: 23, 119, 215, 311, 407)
+Dashboard Line 2 (Day & Date): Y: 75 -> Y: 145 | Clear Box Height: 70px | Baseline Cursor Y: 115
+Dashboard Line 3 (Weather): Y: 160 -> Y: 240
+Dashboard Line 4 (Calendar Feed): Y: 260 -> Y: 340
+Dashboard Analog Core Engine Display: CX: 240, CY: 578 | Radius: 220px (Diameter 440px) | Untouched Scale
+
+* Interface Link: UART BLE Serial Service ("6E400001..." Base Profiles)
+* Target Smartphone Core Environment: Android Studio Native Code Base testing on Xiaomi Hardware
+* 1. Offline Setup Protocol: App shares local phone metrics (Time, Date, TZ, DST) & scrapes local Google Calendar / Weather to push via JSON/String packets over BLE.
+* 2. Online Setup Protocol: App captures current SSID, requests manual UI pass field, streams info to ESP32 over BLE. ESP32 mounts Wi-Fi, handshakes NTP Server Pool, pulls live Weather APIs, and mirrors local App Calendar string updates.
+========================================================================
